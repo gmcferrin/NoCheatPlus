@@ -1,6 +1,7 @@
 package fr.neatmonster.nocheatplus.checks.fight;
 
 import org.bukkit.Bukkit;
+import org.bukkit.enchantments.Enchantment;
 
 import fr.neatmonster.nocheatplus.NoCheatPlus;
 import fr.neatmonster.nocheatplus.actions.ParameterName;
@@ -33,6 +34,10 @@ public class KnockbackCheck extends FightCheck {
         final FightData data = getData(player);
 
         boolean cancel = false;
+
+        if (player.getBukkitPlayer().getItemInHand().containsEnchantment(Enchantment.KNOCKBACK) || player.getBukkitPlayer().getItemInHand().containsEnchantment(Enchantment.ARROW_KNOCKBACK)) {
+            return cancel;
+        }
 
         // Check how long ago has the player started sprinting
         if (data.sprint > 0L && System.currentTimeMillis() - data.sprint < cc.knockbackInterval) {
