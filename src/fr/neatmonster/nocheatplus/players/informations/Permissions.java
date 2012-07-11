@@ -31,6 +31,10 @@ public class Permissions {
     public static final String  BLOCKPLACE_PROJECTILE     = BLOCKPLACE + ".projectile";
     public static final String  BLOCKPLACE_AUTOSIGN       = BLOCKPLACE + ".autosign";
 
+	private static final String BLOCKINTERACT             = CHECKS + ".blockinteract";
+	public static final String  BLOCKINTERACT_REACH       = CHECKS + ".reach";
+	public static final String  BLOCKINTERACT_DIRECTION   = CHECKS + ".direction";
+
     private static final String CHAT                      = CHECKS + ".chat";
     public static final String  CHAT_NOPWNAGE             = CHAT + ".nopwnage";
     public static final String  CHAT_ARRIVALSLIMIT        = CHAT + ".arrivalslimit";

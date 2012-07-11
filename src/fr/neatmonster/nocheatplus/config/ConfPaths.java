@@ -72,6 +72,18 @@ public abstract class ConfPaths {
     public static final String  BLOCKPLACE_FASTSIGN_CHECK                 = BLOCKPLACE_FASTSIGN + "active";
     public static final String  BLOCKPLACE_FASTSIGN_EXCLUSIONS            = BLOCKPLACE_FASTSIGN + "exclusions";
 
+	private static final String BLOCKINTERACT                             = CHECKS + "blockinteract.";
+	private static final String BLOCKINTERACT_DIRECTION                   = BLOCKINTERACT + "direction.";
+	public static final String  BLOCKINTERACT_DIRECTION_CHECK             = BLOCKINTERACT_DIRECTION + "active";
+	public static final String  BLOCKINTERACT_DIRECTION_PRECISION         = BLOCKINTERACT_DIRECTION + "precision";
+	public static final String  BLOCKINTERACT_DIRECTION_PENALTYTIME       = BLOCKINTERACT_DIRECTION + "penaltytime";
+	public static final String  BLOCKINTERACT_DIRECTION_ACTIONS           = BLOCKINTERACT_DIRECTION + "actions";
+
+	private static final String BLOCKINTERACT_REACH                       = BLOCKINTERACT + "reach.";
+	public static final String  BLOCKINTERACT_REACH_CHECK                 = BLOCKINTERACT_REACH + "active";
+	public static final String  BLOCKINTERACT_REACH_ACTIONS               = BLOCKINTERACT_REACH + "actions";
+
+
     private static final String CHAT                                      = CHECKS + "chat.";
 
     private static final String CHAT_NOPWNAGE                             = CHAT + "nopwnage.";

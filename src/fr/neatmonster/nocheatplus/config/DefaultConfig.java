@@ -77,6 +77,16 @@ public class DefaultConfig extends ConfigFile {
                         "[disposal]", "[heal]", "[time]", "[weather]", "[warp]", "[spawnmob]", "[enchant]", "[trade]",
                         "[buy]", "[sell]", "[balance]", "[gate]", "[bridge]", "[door]"}));
 
+	    /*** BLOCKINTERACT ***/
+
+	    set(ConfPaths.BLOCKINTERACT_REACH_CHECK, true);
+	    set(ConfPaths.BLOCKINTERACT_REACH_ACTIONS, "cancel vl>5 log:bireach:0:2:if cancel");
+
+	    set(ConfPaths.BLOCKINTERACT_DIRECTION_CHECK, true);
+	    set(ConfPaths.BLOCKINTERACT_DIRECTION_PRECISION, 75);
+	    set(ConfPaths.BLOCKINTERACT_DIRECTION_PENALTYTIME, 100);
+	    set(ConfPaths.BLOCKINTERACT_DIRECTION_ACTIONS, "cancel vl>10 log:bidirection:0:3:if cancel");
+
         /*** CHAT ***/
 
         set(ConfPaths.CHAT_NOPWNAGE_CHECK, true);
@@ -258,6 +268,10 @@ public class DefaultConfig extends ConfigFile {
                 "[player] failed [check]: tried to interact with a block over distance [reachdistance]. VL [violations].");
         set(ConfPaths.STRINGS + ".bpdirection",
                 "[player] failed [check]: tried to interact with a block out of line of sight. VL [violations].");
+	    set(ConfPaths.STRINGS + ".bireach",
+			    "[player] failed [check]: tried to interact with a block over distance [reachdistance]. VL [violations].");
+	    set(ConfPaths.STRINGS + ".bidirection",
+			    "[player] failed [check]: tried to interact with a block out of line of sight. VL [violations].");
         set(ConfPaths.STRINGS + ".bpprojectile",
                 "[player] failed [check]: tried to throw items too quicly. VL [violations].");
         set(ConfPaths.STRINGS + ".nopwnage", "[player] ([ip]) failed chat.nopwnage: [reason].");
