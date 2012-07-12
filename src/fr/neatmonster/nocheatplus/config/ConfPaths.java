@@ -68,6 +68,10 @@ public abstract class ConfPaths {
     public static final String  BLOCKPLACE_PROJECTILE_INTERVAL            = BLOCKPLACE_PROJECTILE + "interval";
     public static final String  BLOCKPLACE_PROJECTILE_ACTIONS             = BLOCKPLACE_PROJECTILE + "actions";
 
+	private static final String BLOCKPLACE_NOSWING                        = BLOCKPLACE + "noswing.";
+	public static final String  BLOCKPLACE_NOSWING_CHECK                  = BLOCKPLACE_NOSWING + "active";
+	public static final String  BLOCKPLACE_NOSWING_ACTIONS                = BLOCKPLACE_NOSWING + "actions";
+
     private static final String BLOCKPLACE_FASTSIGN                       = BLOCKPLACE + "fastsign.";
     public static final String  BLOCKPLACE_FASTSIGN_CHECK                 = BLOCKPLACE_FASTSIGN + "active";
     public static final String  BLOCKPLACE_FASTSIGN_EXCLUSIONS            = BLOCKPLACE_FASTSIGN + "exclusions";

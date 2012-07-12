@@ -77,6 +77,9 @@ public class DefaultConfig extends ConfigFile {
                         "[disposal]", "[heal]", "[time]", "[weather]", "[warp]", "[spawnmob]", "[enchant]", "[trade]",
                         "[buy]", "[sell]", "[balance]", "[gate]", "[bridge]", "[door]"}));
 
+	    set(ConfPaths.BLOCKPLACE_NOSWING_CHECK, true);
+	    set(ConfPaths.BLOCKPLACE_NOSWING_ACTIONS, "log:bpnoswing:3:2:if cancel");
+
 	    /*** BLOCKINTERACT ***/
 
 	    set(ConfPaths.BLOCKINTERACT_REACH_CHECK, true);
@@ -268,6 +271,7 @@ public class DefaultConfig extends ConfigFile {
                 "[player] failed [check]: tried to interact with a block over distance [reachdistance]. VL [violations].");
         set(ConfPaths.STRINGS + ".bpdirection",
                 "[player] failed [check]: tried to interact with a block out of line of sight. VL [violations].");
+	    set(ConfPaths.STRINGS + ".bpnoswing", "[player] failed [check]: Didn't swing arm. VL [violations].");
 	    set(ConfPaths.STRINGS + ".bireach",
 			    "[player] failed [check]: tried to interact with a block over distance [reachdistance]. VL [violations].");
 	    set(ConfPaths.STRINGS + ".bidirection",

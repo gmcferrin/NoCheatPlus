@@ -17,6 +17,7 @@ public class Statistics {
         BP_DIRECTION("blockplace.direction"),
         BP_REACH("blockplace.reach"),
         BP_PROJECTILE("blockplace.projectile"),
+	    BP_NOSWING("blockplace.noswing"),
 	    BI_DIRECTION("blockinteract.direction"),
 	    BI_REACH("blockinteract.reach"),
         CHAT_COLOR("chat.color"),

@@ -53,7 +53,7 @@ public class ReachCheck extends BlockInteractCheck {
         else {
             // He failed, increment violation level and statistics
             data.reachVL += distance;
-            incrementStatistics(player, Id.BP_REACH, distance);
+            incrementStatistics(player, Id.BI_REACH, distance);
 
             // Remember how much further than allowed he tried to reach for
             // logging, if necessary

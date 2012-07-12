@@ -14,6 +14,7 @@ public class BlockPlaceData extends CheckData {
     public double               reachVL                    = 0.0D;
     public double               directionVL                = 0.0D;
     public double               projectileVL               = 0.0D;
+	public double               noswingVL                  = 0.0D;
 
     // Used to know when the player has placed his previous block
     public long                 lastPlaceTime              = 0;
@@ -39,6 +40,9 @@ public class BlockPlaceData extends CheckData {
 
     // Used to store the last time a projectile was thrown
     public long                 lastProjectileTime         = 0;
+
+	// indicate if the player swung his arm since he got checked last time
+	public boolean              armswung                   = true;
 
     // Used to know if the previous projectile-thrown-event was refused
     public boolean              previousProjectileRefused  = false;
