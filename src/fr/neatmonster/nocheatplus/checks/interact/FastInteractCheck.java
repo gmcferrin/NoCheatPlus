@@ -26,7 +26,7 @@ public class FastInteractCheck extends BlockInteractCheck {
     }
 
     public FastInteractCheck() {
-        super("fastplace");
+        super("fastinteract");
     }
 
     @Override
