@@ -40,7 +40,7 @@ public class BlockInteractListener extends CheckListener {
 			priority = EventPriority.MONITOR)
 	public void armSwing(final PlayerAnimationEvent event) {
 		// Just set a flag to true when the arm was swung
-		((BlockPlaceData) getData(NCPPlayer.getPlayer(event.getPlayer()))).armswung = true;
+		((BlockInteractData) getData(NCPPlayer.getPlayer(event.getPlayer()))).armswung = true;
 	}
 
     /**
