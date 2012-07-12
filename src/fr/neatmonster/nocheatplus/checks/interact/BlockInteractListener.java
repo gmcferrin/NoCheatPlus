@@ -1,7 +1,6 @@
 package fr.neatmonster.nocheatplus.checks.interact;
 
 import fr.neatmonster.nocheatplus.checks.CheckListener;
-import fr.neatmonster.nocheatplus.checks.blockplace.BlockPlaceData;
 import fr.neatmonster.nocheatplus.players.NCPPlayer;
 import fr.neatmonster.nocheatplus.players.informations.Permissions;
 import org.bukkit.event.EventHandler;
@@ -16,6 +15,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
  */
 public class BlockInteractListener extends CheckListener {
 
+	private final FastInteractCheck fastInteractCheck;
     private final ReachCheck reachCheck;
     private final DirectionCheck  directionCheck;
 	private final NoswingCheck  noswingCheck;
@@ -26,6 +26,7 @@ public class BlockInteractListener extends CheckListener {
         reachCheck = new ReachCheck();
         directionCheck = new DirectionCheck();
 	    noswingCheck = new NoswingCheck();
+	    fastInteractCheck = new FastInteractCheck();
     }
 
 	/**
@@ -68,15 +69,19 @@ public class BlockInteractListener extends CheckListener {
 
         // Now do the actual checks
 
-	    // First the noswing check
-	    if (cc.noswingCheck && !player.hasPermission(Permissions.BLOCKINTERACT_NOSWING))
+	    // Second the noswing check
+	    if (cc.fastInteractCheck && !player.hasPermission(Permissions.BLOCKINTERACT_FASTINTERACT))
+		    cancelled = fastInteractCheck.check(player);
+
+	    // Second the noswing check
+	    if (!cancelled && cc.noswingCheck && !player.hasPermission(Permissions.BLOCKINTERACT_NOSWING))
 		    cancelled = noswingCheck.check(player);
 
-        // Second the reach check
+        // Third the reach check
         if (!cancelled && cc.reachCheck && !player.hasPermission(Permissions.BLOCKINTERACT_REACH))
             cancelled = reachCheck.check(player);
 
-        // Third the direction check
+        // Fourth the direction check
         if (!cancelled && cc.directionCheck && !player.hasPermission(Permissions.BLOCKINTERACT_DIRECTION))
             cancelled = directionCheck.check(player);
 

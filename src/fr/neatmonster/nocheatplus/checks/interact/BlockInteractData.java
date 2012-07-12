@@ -11,12 +11,16 @@ import org.bukkit.block.BlockFace;
 public class BlockInteractData extends CheckData {
 
     // Keep track of violation levels for the two checks
+    public double               fastInteractVL             = 0.0D;
     public double               reachVL                    = 0.0D;
     public double               directionVL                = 0.0D;
 	public double               noswingVL                  = 0.0D;
 
     // Used to know if the previous event was refused
     public boolean              previousRefused            = false;
+
+	// Used to know when the player has placed his previous block
+	public long                 lastInteractTime           = 0;
 
     // Used for the penalty time feature of the direction check
     public long                 directionLastViolationTime = 0;

@@ -82,6 +82,11 @@ public class DefaultConfig extends ConfigFile {
 
 	    /*** BLOCKINTERACT ***/
 
+	    set(ConfPaths.BLOCKINTERACT_FASTINTERACT_CHECK, true);
+	    set(ConfPaths.BLOCKINTERACT_FASTINTERACT_INTERVAL, 95);
+	    set(ConfPaths.BLOCKINTERACT_FASTINTERACT_ACTIONS,
+			    "cancel vl>100 log:bifastinteract:3:5:cif cancel vl>1000 log:bifastinteract:3:5:cif cmd:kick cancel");
+
 	    set(ConfPaths.BLOCKINTERACT_REACH_CHECK, true);
 	    set(ConfPaths.BLOCKINTERACT_REACH_ACTIONS, "cancel vl>5 log:bireach:0:2:if cancel");
 
@@ -280,6 +285,8 @@ public class DefaultConfig extends ConfigFile {
 	    set(ConfPaths.STRINGS + ".bidirection",
 			    "[player] failed [check]: tried to interact with a block out of line of sight. VL [violations].");
 	    set(ConfPaths.STRINGS + ".binoswing", "[player] failed [check]: Didn't swing arm. VL [violations].");
+	    set(ConfPaths.STRINGS + ".bifastinteract",
+			    "[player] failed [check]: tried to interact with too much blocks. Total violation level [violations].");
         set(ConfPaths.STRINGS + ".bpprojectile",
                 "[player] failed [check]: tried to throw items too quicly. VL [violations].");
         set(ConfPaths.STRINGS + ".nopwnage", "[player] ([ip]) failed chat.nopwnage: [reason].");

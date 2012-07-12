@@ -16,6 +16,10 @@ import java.util.List;
  * 
  */
 public class BlockInteractConfig extends CheckConfig {
+	public final boolean    fastInteractCheck;
+	public final int        fastInteractInterval;
+	public final ActionList fastInteractActions;
+
     public final boolean      reachCheck;
     public final double       reachDistance;
     public final ActionList   reachActions;
@@ -29,6 +33,10 @@ public class BlockInteractConfig extends CheckConfig {
 	public final ActionList noswingActions;
 
     public BlockInteractConfig(final ConfigFile data) {
+
+	    fastInteractCheck = data.getBoolean(ConfPaths.BLOCKINTERACT_FASTINTERACT_CHECK);
+	    fastInteractInterval = data.getInt(ConfPaths.BLOCKINTERACT_FASTINTERACT_INTERVAL);
+	    fastInteractActions = data.getActionList(ConfPaths.BLOCKINTERACT_FASTINTERACT_ACTIONS, Permissions.BLOCKINTERACT_FASTINTERACT);
 
         reachCheck = data.getBoolean(ConfPaths.BLOCKINTERACT_REACH_CHECK);
         reachDistance = 535D / 100D;
