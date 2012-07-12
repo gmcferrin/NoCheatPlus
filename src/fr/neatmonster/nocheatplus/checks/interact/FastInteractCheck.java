@@ -34,9 +34,6 @@ public class FastInteractCheck extends BlockInteractCheck {
         final BlockInteractConfig cc = getConfig(player);
         final BlockInteractData data = getData(player);
 
-	    if(!data.isBlockActivelyInteractedWith())
-		    return false;
-
         boolean cancel = false;
 
         // Has the player interact with blocks too quickly
