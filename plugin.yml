@@ -65,7 +65,7 @@ permissions:
           nocheatplus.checks.blockinteract:
             description: Allow the player to bypass all blockinteract checks
             children:
-              nocheatplus.checks.blockplace.fastinteract:
+              nocheatplus.checks.blockinteract.fastinteract:
                 description: Allow a player to interact with blocks very quickly
               nocheatplus.checks.blockinteract.reach:
                 description: Allow a player to interact with blocks at maximum range (about 6-7 blocks)
