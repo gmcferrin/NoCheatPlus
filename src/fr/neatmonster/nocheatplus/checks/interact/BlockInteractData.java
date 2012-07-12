@@ -2,7 +2,10 @@ package fr.neatmonster.nocheatplus.checks.interact;
 
 import fr.neatmonster.nocheatplus.checks.CheckData;
 import fr.neatmonster.nocheatplus.utilities.locations.SimpleLocation;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
+import org.bukkit.material.MaterialData;
 
 /**
  * Player specific data for the blockbreak checks
@@ -27,8 +30,13 @@ public class BlockInteractData extends CheckData {
 
     // Have a nicer/simpler way to work with block locations instead of
     // Bukkits own "Location" class
+    public Material block                                  = Material.AIR;
     public final SimpleLocation blockInteracted            = new SimpleLocation();
 	public BlockFace blockInteractedFace                   = BlockFace.SELF;
+
+	public boolean isBlockActivelyInteractedWith() {
+		return (block == Material.TRAP_DOOR || block == Material.WOOD_DOOR || block == Material.CHEST || block == Material.STONE_BUTTON || block == Material.LEVER || block == Material.DIODE || block == Material.DIODE_BLOCK_OFF || block == Material.DIODE_BLOCK_ON);
+	}
 
 	// indicate if the player swung his arm since he got checked last time
 	public boolean              armswung                   = true;

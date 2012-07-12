@@ -67,6 +67,8 @@ public class BlockInteractListener extends CheckListener {
 
 	    data.blockInteractedFace = event.getBlockFace();
 
+	    data.block = event.getClickedBlock().getType();
+
         // Now do the actual checks
 
 	    // Second the noswing check
