@@ -68,9 +68,34 @@ public abstract class ConfPaths {
     public static final String  BLOCKPLACE_PROJECTILE_INTERVAL            = BLOCKPLACE_PROJECTILE + "interval";
     public static final String  BLOCKPLACE_PROJECTILE_ACTIONS             = BLOCKPLACE_PROJECTILE + "actions";
 
+	private static final String BLOCKPLACE_NOSWING                        = BLOCKPLACE + "noswing.";
+	public static final String  BLOCKPLACE_NOSWING_CHECK                  = BLOCKPLACE_NOSWING + "active";
+	public static final String  BLOCKPLACE_NOSWING_ACTIONS                = BLOCKPLACE_NOSWING + "actions";
+
     private static final String BLOCKPLACE_FASTSIGN                       = BLOCKPLACE + "fastsign.";
     public static final String  BLOCKPLACE_FASTSIGN_CHECK                 = BLOCKPLACE_FASTSIGN + "active";
     public static final String  BLOCKPLACE_FASTSIGN_EXCLUSIONS            = BLOCKPLACE_FASTSIGN + "exclusions";
+
+	private static final String BLOCKINTERACT                             = CHECKS + "blockinteract.";
+	private static final String BLOCKINTERACT_DIRECTION                   = BLOCKINTERACT + "direction.";
+	public static final String  BLOCKINTERACT_DIRECTION_CHECK             = BLOCKINTERACT_DIRECTION + "active";
+	public static final String  BLOCKINTERACT_DIRECTION_PRECISION         = BLOCKINTERACT_DIRECTION + "precision";
+	public static final String  BLOCKINTERACT_DIRECTION_PENALTYTIME       = BLOCKINTERACT_DIRECTION + "penaltytime";
+	public static final String  BLOCKINTERACT_DIRECTION_ACTIONS           = BLOCKINTERACT_DIRECTION + "actions";
+
+	private static final String BLOCKINTERACT_REACH                       = BLOCKINTERACT + "reach.";
+	public static final String  BLOCKINTERACT_REACH_CHECK                 = BLOCKINTERACT_REACH + "active";
+	public static final String  BLOCKINTERACT_REACH_ACTIONS               = BLOCKINTERACT_REACH + "actions";
+
+	private static final String BLOCKINTERACT_NOSWING                     = BLOCKINTERACT + "noswing.";
+	public static final String  BLOCKINTERACT_NOSWING_CHECK               = BLOCKINTERACT_NOSWING + "active";
+	public static final String  BLOCKINTERACT_NOSWING_ACTIONS             = BLOCKINTERACT_NOSWING + "actions";
+
+	private static final String BLOCKINTERACT_FASTINTERACT                = BLOCKINTERACT + "fastplace.";
+	public static final String  BLOCKINTERACT_FASTINTERACT_CHECK          = BLOCKINTERACT_FASTINTERACT + "active";
+	public static final String  BLOCKINTERACT_FASTINTERACT_INTERVAL       = BLOCKINTERACT_FASTINTERACT + "interval";
+	public static final String  BLOCKINTERACT_FASTINTERACT_ACTIONS        = BLOCKINTERACT_FASTINTERACT + "actions";
+
 
     private static final String CHAT                                      = CHECKS + "chat.";
 
