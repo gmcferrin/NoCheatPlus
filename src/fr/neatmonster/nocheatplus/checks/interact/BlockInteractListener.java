@@ -68,6 +68,8 @@ public class BlockInteractListener extends CheckListener {
 
 	    data.blockInteractedFace = event.getBlockFace();
 
+	    data.block = event.getClickedBlock().getType();
+
 	    Action action = event.getAction();
 	    if(action != Action.LEFT_CLICK_BLOCK && action != Action.RIGHT_CLICK_BLOCK) return;
 

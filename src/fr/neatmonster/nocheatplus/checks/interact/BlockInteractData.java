@@ -30,8 +30,13 @@ public class BlockInteractData extends CheckData {
 
     // Have a nicer/simpler way to work with block locations instead of
     // Bukkits own "Location" class
+    public Material block                                  = Material.AIR;
     public final SimpleLocation blockInteracted            = new SimpleLocation();
 	public BlockFace blockInteractedFace                   = BlockFace.SELF;
+
+	public boolean isBlockActivelyInteractedWith() {
+		return (block == Material.TRAP_DOOR || block == Material.WOOD_DOOR || block == Material.CHEST || block == Material.STONE_BUTTON || block == Material.LEVER || block == Material.DIODE || block == Material.DIODE_BLOCK_OFF || block == Material.DIODE_BLOCK_ON);
+	}
 
 	// indicate if the player swung his arm since he got checked last time
 	public boolean              armswung                   = true;

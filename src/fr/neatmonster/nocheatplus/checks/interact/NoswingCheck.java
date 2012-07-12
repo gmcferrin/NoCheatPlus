@@ -34,6 +34,9 @@ public class NoswingCheck extends BlockInteractCheck {
         final BlockInteractConfig cc = getConfig(player);
         final BlockInteractData data = getData(player);
 
+	    if(!data.isBlockActivelyInteractedWith())
+		    return false;
+
         boolean cancel = false;
 
         // did he swing his arm before
