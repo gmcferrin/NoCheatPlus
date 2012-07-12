@@ -87,6 +87,10 @@ public abstract class ConfPaths {
 	public static final String  BLOCKINTERACT_REACH_CHECK                 = BLOCKINTERACT_REACH + "active";
 	public static final String  BLOCKINTERACT_REACH_ACTIONS               = BLOCKINTERACT_REACH + "actions";
 
+	private static final String BLOCKINTERACT_NOSWING                     = BLOCKINTERACT + "noswing.";
+	public static final String  BLOCKINTERACT_NOSWING_CHECK               = BLOCKINTERACT_NOSWING + "active";
+	public static final String  BLOCKINTERACT_NOSWING_ACTIONS             = BLOCKINTERACT_NOSWING + "actions";
+
 
     private static final String CHAT                                      = CHECKS + "chat.";
 

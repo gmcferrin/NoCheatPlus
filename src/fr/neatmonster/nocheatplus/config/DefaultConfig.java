@@ -90,6 +90,9 @@ public class DefaultConfig extends ConfigFile {
 	    set(ConfPaths.BLOCKINTERACT_DIRECTION_PENALTYTIME, 100);
 	    set(ConfPaths.BLOCKINTERACT_DIRECTION_ACTIONS, "cancel vl>10 log:bidirection:0:3:if cancel");
 
+	    set(ConfPaths.BLOCKINTERACT_NOSWING_CHECK, true);
+	    set(ConfPaths.BLOCKINTERACT_NOSWING_ACTIONS, "log:binoswing:3:2:if cancel");
+
         /*** CHAT ***/
 
         set(ConfPaths.CHAT_NOPWNAGE_CHECK, true);
@@ -276,6 +279,7 @@ public class DefaultConfig extends ConfigFile {
 			    "[player] failed [check]: tried to interact with a block over distance [reachdistance]. VL [violations].");
 	    set(ConfPaths.STRINGS + ".bidirection",
 			    "[player] failed [check]: tried to interact with a block out of line of sight. VL [violations].");
+	    set(ConfPaths.STRINGS + ".binoswing", "[player] failed [check]: Didn't swing arm. VL [violations].");
         set(ConfPaths.STRINGS + ".bpprojectile",
                 "[player] failed [check]: tried to throw items too quicly. VL [violations].");
         set(ConfPaths.STRINGS + ".nopwnage", "[player] ([ip]) failed chat.nopwnage: [reason].");

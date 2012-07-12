@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Configurations specific for the "BLOCKINTERACT" checks
+ * Configurations specific for the "blockinteract" checks
  * Every world gets one of these assigned to it, or if a world doesn't get
  * it's own, it will use the "global" version
  * 
@@ -25,7 +25,8 @@ public class BlockInteractConfig extends CheckConfig {
     public final long         directionPenaltyTime;
     public final double       directionPrecision;
 
-    public final List<String> fastSignExclusions = new ArrayList<String>();
+	public final boolean    noswingCheck;
+	public final ActionList noswingActions;
 
     public BlockInteractConfig(final ConfigFile data) {
 
@@ -37,5 +38,8 @@ public class BlockInteractConfig extends CheckConfig {
         directionPenaltyTime = data.getInt(ConfPaths.BLOCKINTERACT_DIRECTION_PENALTYTIME);
         directionPrecision = data.getInt(ConfPaths.BLOCKINTERACT_DIRECTION_PRECISION) / 100D;
         directionActions = data.getActionList(ConfPaths.BLOCKINTERACT_DIRECTION_ACTIONS, Permissions.BLOCKINTERACT_DIRECTION);
+
+	    noswingCheck = data.getBoolean(ConfPaths.BLOCKINTERACT_NOSWING_CHECK);
+	    noswingActions = data.getActionList(ConfPaths.BLOCKINTERACT_NOSWING_ACTIONS, Permissions.BLOCKINTERACT_NOSWING);
     }
 }

@@ -20,6 +20,7 @@ public class Statistics {
 	    BP_NOSWING("blockplace.noswing"),
 	    BI_DIRECTION("blockinteract.direction"),
 	    BI_REACH("blockinteract.reach"),
+	    BI_NOSWING("blockinteract.noswing"),
         CHAT_COLOR("chat.color"),
         FI_DIRECTION("fight.direction"),
         FI_NOSWING("fight.noswing"),
