@@ -30,6 +30,13 @@ public class Permissions {
     public static final String  BLOCKPLACE_DIRECTION      = BLOCKPLACE + ".direction";
     public static final String  BLOCKPLACE_PROJECTILE     = BLOCKPLACE + ".projectile";
     public static final String  BLOCKPLACE_AUTOSIGN       = BLOCKPLACE + ".autosign";
+	public static final String  BLOCKPLACE_NOSWING        = BLOCKPLACE + ".noswing";
+
+	private static final String BLOCKINTERACT             = CHECKS + ".blockinteract";
+	public static final String  BLOCKINTERACT_REACH       = BLOCKINTERACT + ".reach";
+	public static final String  BLOCKINTERACT_DIRECTION   = BLOCKINTERACT + ".direction";
+	public static final String  BLOCKINTERACT_NOSWING     = BLOCKINTERACT + ".noswing";
+	public static final String  BLOCKINTERACT_FASTINTERACT= BLOCKINTERACT + ".fastinteract";
 
     private static final String CHAT                      = CHECKS + ".chat";
     public static final String  CHAT_NOPWNAGE             = CHAT + ".nopwnage";

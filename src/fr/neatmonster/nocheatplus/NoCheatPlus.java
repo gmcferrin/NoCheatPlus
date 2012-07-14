@@ -3,6 +3,7 @@ package fr.neatmonster.nocheatplus;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.neatmonster.nocheatplus.checks.interact.BlockInteractListener;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -69,6 +70,7 @@ public class NoCheatPlus extends JavaPlugin implements Listener {
         listeners.add(new WorkaroundsListener());
         listeners.add(new BlockBreakListener());
         listeners.add(new BlockPlaceListener());
+	    listeners.add(new BlockInteractListener());
         listeners.add(new ChatListener());
         listeners.add(new FightListener());
         listeners.add(new InventoryListener());

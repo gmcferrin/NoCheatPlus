@@ -34,6 +34,9 @@ public class BlockPlaceConfig extends CheckConfig {
     public final int          projectileInterval;
     public final ActionList   projectileActions;
 
+	public final boolean    noswingCheck;
+	public final ActionList noswingActions;
+
     public final List<String> fastSignExclusions = new ArrayList<String>();
 
     public BlockPlaceConfig(final ConfigFile data) {
@@ -58,5 +61,8 @@ public class BlockPlaceConfig extends CheckConfig {
 
         for (final String exclusion : data.getStringList(ConfPaths.BLOCKPLACE_FASTSIGN_EXCLUSIONS))
             data.getStringList(ConfPaths.BLOCKPLACE_FASTSIGN_EXCLUSIONS).add(exclusion.toLowerCase());
+
+	    noswingCheck = data.getBoolean(ConfPaths.BLOCKPLACE_NOSWING_CHECK);
+	    noswingActions = data.getActionList(ConfPaths.BLOCKPLACE_NOSWING_ACTIONS, Permissions.BLOCKPLACE_NOSWING);
     }
 }

@@ -58,8 +58,21 @@ permissions:
                 description: Allow a player to place blocks outside their line of view
               nocheatplus.checks.blockplace.projectile:
                 description: Allow a player to throw projectiles very quickly
+              nocheatplus.checks.blockplace.noswing:
+                description: Allow a player to place blocks without swinging their arm
               nocheatplus.checks.blockplace.autosign:
                 description: Allow a player to create multiple signs with the same text
+          nocheatplus.checks.blockinteract:
+            description: Allow the player to bypass all blockinteract checks
+            children:
+              nocheatplus.checks.blockinteract.fastinteract:
+                description: Allow a player to interact with blocks very quickly
+              nocheatplus.checks.blockinteract.reach:
+                description: Allow a player to interact with blocks at maximum range (about 6-7 blocks)
+              nocheatplus.checks.blockinteract.direction:
+                description: Allow a player to interact with blocks outside their line of view
+              nocheatplus.checks.blockinteract.noswing:
+                description: Allow a player to interact with blocks without swinging their arm
           nocheatplus.checks.chat:
             description: Allow the player to bypass all chat checks
             children:

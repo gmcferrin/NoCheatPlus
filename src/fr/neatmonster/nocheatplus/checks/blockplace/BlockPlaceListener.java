@@ -1,5 +1,6 @@
 package fr.neatmonster.nocheatplus.checks.blockplace;
 
+import fr.neatmonster.nocheatplus.checks.blockbreak.BlockBreakData;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -8,6 +9,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
+import org.bukkit.event.player.PlayerAnimationEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 import fr.neatmonster.nocheatplus.checks.CheckListener;
@@ -25,6 +27,7 @@ public class BlockPlaceListener extends CheckListener {
     private final ReachCheck      reachCheck;
     private final DirectionCheck  directionCheck;
     private final ProjectileCheck projectileCheck;
+	private final NoswingCheck    noswingCheck;
 
     public BlockPlaceListener() {
         super("blockplace");
@@ -33,7 +36,23 @@ public class BlockPlaceListener extends CheckListener {
         reachCheck = new ReachCheck();
         directionCheck = new DirectionCheck();
         projectileCheck = new ProjectileCheck();
+	    noswingCheck = new NoswingCheck();
     }
+
+	/**
+	 * We listen to PlayerAnimationEvent because it is (currently) equivalent
+	 * to "player swings arm" and we want to check if he did that between
+	 * blockbreaks.
+	 *
+	 * @param event
+	 *            The PlayerAnimation Event
+	 */
+	@EventHandler(
+			priority = EventPriority.MONITOR)
+	public void armSwing(final PlayerAnimationEvent event) {
+		// Just set a flag to true when the arm was swung
+		((BlockPlaceData) getData(NCPPlayer.getPlayer(event.getPlayer()))).armswung = true;
+	}
 
     /**
      * We listen to BlockPlace events for obvious reasons
@@ -64,11 +83,16 @@ public class BlockPlaceListener extends CheckListener {
         if (cc.fastPlaceCheck && !player.hasPermission(Permissions.BLOCKPLACE_FASTPLACE))
             cancelled = fastPlaceCheck.check(player);
 
-        // Second the reach check
+	    // Second NoSwing: Did the arm of the player move before placing this
+	    // block?
+	    if (!cancelled && cc.noswingCheck && !player.hasPermission(Permissions.BLOCKBREAK_NOSWING))
+		    cancelled = noswingCheck.check(player);
+
+        // Third the reach check
         if (!cancelled && cc.reachCheck && !player.hasPermission(Permissions.BLOCKPLACE_REACH))
             cancelled = reachCheck.check(player);
 
-        // Third the direction check
+        // Fourth the direction check
         if (!cancelled && cc.directionCheck && !player.hasPermission(Permissions.BLOCKPLACE_DIRECTION))
             cancelled = directionCheck.check(player);
 
